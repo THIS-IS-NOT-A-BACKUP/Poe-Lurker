@@ -354,6 +354,7 @@ namespace Lurker.UI
                     this._helpOverlay = this._container.GetInstance<HelpViewModel>();
                     this._helpOverlay.Initialize(this.ToggleBuildHelper);
                     this.ActivateItem(this._helpOverlay);
+                    this.ActivateItem(this._buildViewModel);
 
                     if (this._skillTimelineOverlay != null && this._settingsService.TimelineEnabled)
                     {
@@ -448,6 +449,11 @@ namespace Lurker.UI
 
                 if (this._settingsService.BuildHelper)
                 {
+                    if (this._settingsService.TimelineEnabled)
+                    {
+                        this.ActivateItem(this._skillTimelineOverlay);
+                    }
+
                     this.ActivateItem(this._helpOverlay);
                 }
 
@@ -461,17 +467,9 @@ namespace Lurker.UI
                     this.ActivateItem(this._outgoingTradeBarOverlay);
                 }
 
-                if (this._settingsService.TimelineEnabled)
-                {
-                    this.ActivateItem(this._skillTimelineOverlay);
-                }
-
                 this.ActivateItem(this._lifeBulbOverlay);
                 this.ActivateItem(this._manaBulbOverlay);
                 this.ActivateItem(this._hideoutOverlay);
-
-                // Needs to be done after
-                var task = this._keyboardLurker.InstallHook();
             });
         }
 
