@@ -105,6 +105,23 @@ namespace Lurker.UI.ViewModels
         #region Properties
 
         /// <summary>
+        /// Gets the version.
+        /// </summary>
+        public string Version
+        {
+            get
+            {
+                var version = Assembly.GetExecutingAssembly().GetName().Version;
+                return $"{version.Major}.{version.Minor}.{version.Build}";
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the main hot key.
+        /// </summary>
+        public HotkeyViewModel MainHotkey { get; set; }
+
+        /// <summary>
         /// Gets or sets the hotkeys.
         /// </summary>
         public ObservableCollection<HotkeyViewModel> Hotkeys { get; set; }
@@ -815,6 +832,14 @@ namespace Lurker.UI.ViewModels
         #region Methods
 
         /// <summary>
+        /// Opens the discord.
+        /// </summary>
+        public void OpenDiscord()
+        {
+            Process.Start("https://discord.com/invite/hQERv7K");
+        }
+
+        /// <summary>
         /// Activates the window.
         /// </summary>
         public void ActivateWindow()
@@ -1232,17 +1257,21 @@ namespace Lurker.UI.ViewModels
         /// </summary>
         private void SetupHotkeys()
         {
+            this.MainHotkey = new HotkeyViewModel("Invite & Trade", this._hotkeyService.Main, this.GetNextKeyCode);
+
             this.Hotkeys = new ObservableCollection<HotkeyViewModel>();
             this.Hotkeys.Add(new HotkeyViewModel("Invite", this._hotkeyService.Invite, this.GetNextKeyCode));
+            this.Hotkeys.Add(new HotkeyViewModel("Trade", this._hotkeyService.Trade, this.GetNextKeyCode));
             this.Hotkeys.Add(new HotkeyViewModel("Busy", this._hotkeyService.Busy, this.GetNextKeyCode));
             this.Hotkeys.Add(new HotkeyViewModel("Dismiss", this._hotkeyService.Dismiss, this.GetNextKeyCode));
-            this.Hotkeys.Add(new HotkeyViewModel("Trade", this._hotkeyService.Trade, this.GetNextKeyCode));
-            this.Hotkeys.Add(new HotkeyViewModel("Still Interested", this._hotkeyService.StillInterested, this.GetNextKeyCode));
 
+            // this.Hotkeys.Add(new HotkeyViewModel("Still Interested", this._hotkeyService.StillInterested, this.GetNextKeyCode));
             foreach (var hotkey in this.Hotkeys)
             {
                 hotkey.PropertyChanged += this.Hotkey_PropertyChanged;
             }
+
+            this.MainHotkey.PropertyChanged += this.Hotkey_PropertyChanged;
         }
 
         /// <summary>

@@ -7,6 +7,7 @@
 namespace Lurker
 {
     using System;
+    using System.Threading;
     using System.Threading.Tasks;
     using Lurker.Helpers;
     using Lurker.Patreon.Parsers;
@@ -23,11 +24,13 @@ namespace Lurker
         #region Fields
 
         private static readonly ushort DeleteKeyCode = 46;
+        private CancellationTokenSource _tokenSource;
         private KeyboardHook _keyboardHook;
         private ItemParser _itemParser;
         private SettingsService _settingsService;
         private HotkeyService _hotkeyService;
         private PoeKeyboardHelper _keyboardHelper;
+        private Task _currentHoldTask;
         private bool _disposed;
         private ushort _toggleBuildCode;
         private int _processId;
@@ -85,6 +88,11 @@ namespace Lurker
         /// Occurs when [trade pressed].
         /// </summary>
         public event KeyboardEventHandler TradePressed;
+
+        /// <summary>
+        /// Occurs when [main action pressed].
+        /// </summary>
+        public event KeyboardEventHandler MainActionPressed;
 
         /// <summary>
         /// Occurs when [still interested pressed].
@@ -157,6 +165,63 @@ namespace Lurker
         }
 
         /// <summary>
+        /// Mains the action toggled.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="KeyboardMessageEventArgs"/> instance containing the event data.</param>
+        private async void MainActionToggled(object sender, KeyboardMessageEventArgs e)
+        {
+            if (e.Direction == KeyDirection.Down)
+            {
+                if (this._currentHoldTask != null)
+                {
+                    return;
+                }
+
+                try
+                {
+                    this._tokenSource = new CancellationTokenSource();
+                    this._currentHoldTask = Task.Delay(500);
+                    await this._currentHoldTask;
+                    if (this._tokenSource.IsCancellationRequested)
+                    {
+                        this._currentHoldTask = null;
+                        return;
+                    }
+
+                    this.InvitePressed?.Invoke(sender, e);
+                }
+                finally
+                {
+                    this._tokenSource.Dispose();
+                    this._tokenSource = null;
+                }
+
+                return;
+            }
+
+            if (e.Direction == KeyDirection.Up)
+            {
+                if (this._currentHoldTask == null)
+                {
+                    return;
+                }
+
+                if (this._currentHoldTask.IsCompleted)
+                {
+                    this._tokenSource = new CancellationTokenSource();
+                    this._currentHoldTask = null;
+                    return;
+                }
+
+                this._tokenSource.Cancel();
+                this.MainActionPressed?.Invoke(sender, e);
+
+                return;
+            }
+        }
+
+        /// <summary>
         /// Handles the OnSave event of the SettingsService control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
@@ -184,12 +249,13 @@ namespace Lurker
             this._keyboardHook.AddHandler(DeleteKeyCode, this.DeleteItem);
 
             // Hotkeys
+            this._hotkeyService.Main.Install(this._keyboardHook, this.MainActionToggled, true);
             this._hotkeyService.Trade.Install(this._keyboardHook, this.TradePressed);
             this._hotkeyService.Busy.Install(this._keyboardHook, this.BusyPressed);
             this._hotkeyService.Dismiss.Install(this._keyboardHook, this.DismissPressed);
-            this._hotkeyService.StillInterested.Install(this._keyboardHook, this.StillInterestedPressed);
             this._hotkeyService.Invite.Install(this._keyboardHook, this.InvitePressed);
 
+            // this._hotkeyService.StillInterested.Install(this._keyboardHook, this.StillInterestedPressed);
             try
             {
                 await this._keyboardHook.InstallAsync();
@@ -216,12 +282,13 @@ namespace Lurker
             this._keyboardHook.RemoveHandler('R', Modifiers.Control, KeyDirection.Up, this.RemainingMonsters);
             this._keyboardHook.RemoveHandler(DeleteKeyCode, this.DeleteItem);
 
-            this._hotkeyService.Trade.Uninstall(this._keyboardHook);
-            this._hotkeyService.Busy.Uninstall(this._keyboardHook);
-            this._hotkeyService.Dismiss.Uninstall(this._keyboardHook);
-            this._hotkeyService.StillInterested.Uninstall(this._keyboardHook);
-            this._hotkeyService.Invite.Uninstall(this._keyboardHook);
+            this._hotkeyService.Main.Uninstall();
+            this._hotkeyService.Trade.Uninstall();
+            this._hotkeyService.Busy.Uninstall();
+            this._hotkeyService.Dismiss.Uninstall();
+            this._hotkeyService.Invite.Uninstall();
 
+            // this._hotkeyService.StillInterested.Uninstall(this._keyboardHook);
             this._keyboardHook.Uninstall();
         }
 
