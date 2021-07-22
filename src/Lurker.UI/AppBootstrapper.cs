@@ -21,7 +21,7 @@ namespace Lurker.UI
     /// <summary>
     /// Represents AppBootstrapper.
     /// </summary>
-    /// <seealso cref="Caliburn.Micro.BootstrapperBase" />
+    /// <seealso cref="BootstrapperBase" />
     public class AppBootstrapper : BootstrapperBase
     {
         #region Fields
@@ -64,12 +64,13 @@ namespace Lurker.UI
             this._container.Singleton<SoundService, SoundService>();
             this._container.Singleton<CollaborationService, CollaborationService>();
             this._container.Singleton<SettingsViewModel, SettingsViewModel>();
+            this._container.Singleton<GithubService, GithubService>();
             this._container.Singleton<DashboardViewModel, DashboardViewModel>();
             this._container.Singleton<TutorialViewModel, TutorialViewModel>();
-
             this._container.PerRequest<AfkService, AfkService>();
             this._container.PerRequest<UpdateManager, UpdateManager>();
             this._container.PerRequest<ShellViewModel, ShellViewModel>();
+            this._container.PerRequest<WikiViewModel, WikiViewModel>();
             this._container.PerRequest<TradebarViewModel, TradebarViewModel>();
             this._container.PerRequest<PopupViewModel, PopupViewModel>();
             this._container.PerRequest<BuildTimelineViewModel, BuildTimelineViewModel>();
@@ -195,9 +196,9 @@ namespace Lurker.UI
             var exception = e.ExceptionObject as Exception;
             Logger.Error(exception, exception.Message);
 
-        #if !DEBUG
-            SentrySdk.CaptureException(exception);
-        #endif
+            #if !DEBUG
+                SentrySdk.CaptureException(exception);
+            #endif
             this._sentry.Dispose();
         }
 

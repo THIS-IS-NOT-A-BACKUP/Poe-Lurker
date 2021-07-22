@@ -33,6 +33,7 @@
     <LangVersion>8.0</LangVersion>
     <CodeAnalysisRuleSet>..\..\PoeLurker.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>bin\Debug\PoeLurker.xml</DocumentationFile>
+    <NoWarn>IDE0008,IDE0027,IDE0065,IDE0058,IDE0044,IDE0063,IDE0001,IDE0019</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -353,6 +354,7 @@
     <Compile Include="ViewModels\UpdateViewModel.cs" />
     <Compile Include="ViewModels\WeaponViewModel.cs" />
     <Compile Include="ViewModels\WikiItemBaseViewModel.cs" />
+    <Compile Include="ViewModels\WikiViewModel.cs" />
     <Compile Include="Views\AffixView.xaml.cs">
       <DependentUpon>AffixView.xaml</DependentUpon>
     </Compile>
@@ -484,6 +486,9 @@
     </Compile>
     <Compile Include="Views\WeaponView.xaml.cs">
       <DependentUpon>WeaponView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WikiView.xaml.cs">
+      <DependentUpon>WikiView.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\AffixView.xaml">
       <SubType>Designer</SubType>
@@ -650,6 +655,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\WeaponView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WikiView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

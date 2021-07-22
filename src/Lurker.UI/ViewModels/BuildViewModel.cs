@@ -21,7 +21,7 @@ namespace Lurker.UI.ViewModels
     /// <summary>
     /// Represents a build viewmodel.
     /// </summary>
-    /// <seealso cref="Lurker.UI.ViewModels.PoeOverlayBase" />
+    /// <seealso cref="PoeOverlayBase" />
     public class BuildViewModel : PoeOverlayBase
     {
         #region Fields
@@ -37,9 +37,9 @@ namespace Lurker.UI.ViewModels
         private PlayerService _playerService;
         private Player _activePlayer;
         private BuildService _buildService;
-        private ObservableCollection<SimpleBuild> _builds;
         private SimpleBuild _currentBuild;
         private SettingsViewModel _settings;
+        private GithubService _githubService;
 
         #endregion
 
@@ -55,9 +55,11 @@ namespace Lurker.UI.ViewModels
         /// <param name="buildService">The build service.</param>
         /// <param name="playerService">The player service.</param>
         /// <param name="settingsViewModel">The settings view model.</param>
-        public BuildViewModel(IWindowManager windowManager, DockingHelper dockingHelper, ProcessLurker processLurker, SettingsService settingsService, BuildService buildService, PlayerService playerService, SettingsViewModel settingsViewModel)
+        /// <param name="githubService">The github service.</param>
+        public BuildViewModel(IWindowManager windowManager, DockingHelper dockingHelper, ProcessLurker processLurker, SettingsService settingsService, BuildService buildService, PlayerService playerService, SettingsViewModel settingsViewModel, GithubService githubService)
             : base(windowManager, dockingHelper, processLurker, settingsService)
         {
+            this._githubService = githubService;
             this._activePlayer = playerService.FirstPlayer;
             if (this._activePlayer != null && !string.IsNullOrEmpty(this._activePlayer.Build.BuildId))
             {
@@ -88,7 +90,7 @@ namespace Lurker.UI.ViewModels
             this.ActivePlayer = new PlayerViewModel(playerService);
             this._playerService.PlayerChanged += this.PlayerService_PlayerChanged;
             this._buildService = buildService;
-            this._builds = new ObservableCollection<SimpleBuild>();
+            this.Builds = new ObservableCollection<SimpleBuild>();
 
             this.BuildSelector = new BuildSelectorViewModel(buildService);
             this.BuildSelector.BuildSelected += this.BuildSelector_BuildSelected;
@@ -157,18 +159,7 @@ namespace Lurker.UI.ViewModels
         /// <summary>
         /// Gets the builds.
         /// </summary>
-        public ObservableCollection<SimpleBuild> Builds
-        {
-            get
-            {
-                return this._builds;
-            }
-
-            private set
-            {
-                this._builds = value;
-            }
-        }
+        public ObservableCollection<SimpleBuild> Builds { get; private set; }
 
         /// <summary>
         /// Gets the active player.
@@ -385,7 +376,7 @@ namespace Lurker.UI.ViewModels
             {
                 using (var service = new PathOfBuildingService())
                 {
-                    await service.InitializeAsync();
+                    await service.InitializeAsync(this._githubService);
                     this.Build = service.Decode(buildValue);
                     this.Ascendancy = this.Build.Ascendancy;
                     this.Skills.Clear();
