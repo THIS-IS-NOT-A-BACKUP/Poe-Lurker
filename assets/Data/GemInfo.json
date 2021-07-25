@@ -1,5 +1,14 @@
 [
   {
+    "Id": "Absolution",
+    "Support": false,
+    "Location": null,
+    "Name": "Absolution",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Absolution",
+    "ImageUrl": null,
+    "Level": 12
+  },
+  {
     "Id": "AbyssalCry",
     "Support": false,
     "Location": {
@@ -37,6 +46,15 @@
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Precision",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/7/72/Precision_inventory_icon.png/revision/latest?cb=20190607182341",
     "Level": 10
+  },
+  {
+    "Id": "Ambush",
+    "Support": false,
+    "Location": null,
+    "Name": "Ambush",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Ambush",
+    "ImageUrl": null,
+    "Level": 34
   },
   {
     "Id": "AncestorTotemSlam",
@@ -335,6 +353,15 @@
     "Level": 12
   },
   {
+    "Id": "BattlemagesCry",
+    "Support": false,
+    "Location": null,
+    "Name": "Battlemage's Cry",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Battlemage%27s_Cry",
+    "ImageUrl": null,
+    "Level": 24
+  },
+  {
     "Id": "BearTrap",
     "Support": false,
     "Location": {
@@ -400,6 +427,15 @@
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Blade_Blast",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/1/1c/Blade_Blast_inventory_icon.png/revision/latest?cb=20200313185542",
     "Level": 16
+  },
+  {
+    "Id": "BladeTrap",
+    "Support": false,
+    "Location": null,
+    "Name": "Blade Trap",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Blade_Trap",
+    "ImageUrl": null,
+    "Level": 12
   },
   {
     "Id": "BladeVortex",
@@ -666,6 +702,15 @@
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Bone_Offering",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/9/9f/Bone_Offering_inventory_icon.png/revision/latest?cb=20140130020351",
     "Level": 12
+  },
+  {
+    "Id": "Boneshatter",
+    "Support": false,
+    "Location": null,
+    "Name": "Boneshatter",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Boneshatter",
+    "ImageUrl": null,
+    "Level": 28
   },
   {
     "Id": "BrandSupport",
@@ -1245,6 +1290,15 @@
     "Level": 4
   },
   {
+    "Id": "DefianceBanner",
+    "Support": false,
+    "Location": null,
+    "Name": "Defiance Banner",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Defiance_Banner",
+    "ImageUrl": null,
+    "Level": 16
+  },
+  {
     "Id": "Desecrate",
     "Support": false,
     "Location": {
@@ -1761,6 +1815,15 @@
     "Level": 28
   },
   {
+    "Id": "ExplosiveConcoction",
+    "Support": false,
+    "Location": null,
+    "Name": "Explosive Concoction",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Explosive_Concoction",
+    "ImageUrl": null,
+    "Level": 28
+  },
+  {
     "Id": "Exsanguinate",
     "Support": false,
     "Location": null,
@@ -1768,6 +1831,15 @@
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Exsanguinate",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/8/86/Exsanguinate_inventory_icon.png/revision/latest?cb=20210505020044",
     "Level": 12
+  },
+  {
+    "Id": "EyeOfWinter",
+    "Support": false,
+    "Location": null,
+    "Name": "Eye of Winter",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Eye_of_Winter",
+    "ImageUrl": null,
+    "Level": 28
   },
   {
     "Id": "FireBeam",
@@ -2062,6 +2134,15 @@
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Flicker_Strike",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/3/3c/Flicker_Strike_inventory_icon.png/revision/latest?cb=20130626162247",
     "Level": 10
+  },
+  {
+    "Id": "ForbiddenRite",
+    "Support": false,
+    "Location": null,
+    "Name": "Forbidden Rite",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Forbidden_Rite",
+    "ImageUrl": null,
+    "Level": 16
   },
   {
     "Id": "FreezingPulse",
@@ -3094,6 +3175,15 @@
     "Level": 28
   },
   {
+    "Id": "Manabond",
+    "Support": false,
+    "Location": null,
+    "Name": "Manabond",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Manabond",
+    "ImageUrl": null,
+    "Level": 12
+  },
+  {
     "Id": "MirrorArrow",
     "Support": false,
     "Location": {
@@ -3536,6 +3626,15 @@
     "Level": 4
   },
   {
+    "Id": "RageVortex",
+    "Support": false,
+    "Location": null,
+    "Name": "Rage Vortex",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Rage_Vortex",
+    "ImageUrl": null,
+    "Level": 28
+  },
+  {
     "Id": "RainOfArrows",
     "Support": false,
     "Location": {
@@ -3877,6 +3976,15 @@
     "Level": 12
   },
   {
+    "Id": "ShieldCrush",
+    "Support": false,
+    "Location": null,
+    "Name": "Shield Crush",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Shield_Crush",
+    "ImageUrl": null,
+    "Level": 1
+  },
+  {
     "Id": "ShockNova",
     "Support": false,
     "Location": {
@@ -4188,6 +4296,15 @@
     "Level": 1
   },
   {
+    "Id": "SpectralHelix",
+    "Support": false,
+    "Location": null,
+    "Name": "Spectral Helix",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Spectral_Helix",
+    "ImageUrl": null,
+    "Level": 12
+  },
+  {
     "Id": "SpellDamageAura",
     "Support": false,
     "Location": {
@@ -4349,6 +4466,15 @@
     "Level": 12
   },
   {
+    "Id": "StormRain",
+    "Support": false,
+    "Location": null,
+    "Name": "Storm Rain",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Storm_Rain",
+    "ImageUrl": null,
+    "Level": 28
+  },
+  {
     "Id": "Stormbind",
     "Support": false,
     "Location": {
@@ -4495,6 +4621,15 @@
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Summon_Raging_Spirit",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/0/0a/Summon_Raging_Spirit_inventory_icon.png/revision/latest?cb=20140130020510",
     "Level": 4
+  },
+  {
+    "Id": "SummonReaper",
+    "Support": false,
+    "Location": null,
+    "Name": "Summon Reaper",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Summon_Reaper",
+    "ImageUrl": null,
+    "Level": 28
   },
   {
     "Id": "SummonRelic",
@@ -4682,7 +4817,19 @@
   {
     "Id": "SupportAdditionalAccuracy",
     "Support": true,
-    "Location": null,
+    "Location": {
+      "Quest": "The Caged Brute",
+      "Act": "Act 1",
+      "Npc": "Nessa",
+      "Classes": [
+        "Shadow",
+        "Ranger",
+        "Duelist",
+        "Marauder",
+        "Templar",
+        "Scion"
+      ]
+    },
     "Name": "Additional Accuracy Support",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Additional_Accuracy_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/0/05/Additional_Accuracy_Support_inventory_icon.png/revision/latest?cb=20130626162148",
@@ -4803,7 +4950,17 @@
   {
     "Id": "SupportArchmage",
     "Support": true,
-    "Location": null,
+    "Location": {
+      "Quest": "A Fixture of Fate",
+      "Act": "Act 3",
+      "Npc": "Clarissa",
+      "Classes": [
+        "Witch",
+        "Shadow",
+        "Templar",
+        "Scion"
+      ]
+    },
     "Name": "Archmage Support",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Archmage_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/4/41/Archmage_Support_inventory_icon.png/revision/latest?cb=20200313190347",
@@ -4840,10 +4997,32 @@
   {
     "Id": "SupportBarrage",
     "Support": true,
-    "Location": null,
+    "Location": {
+      "Quest": "The Eternal Nightmare",
+      "Act": "Act 4",
+      "Npc": "Petarus and Vanja",
+      "Classes": [
+        "Witch",
+        "Shadow",
+        "Ranger",
+        "Duelist",
+        "Marauder",
+        "Templar",
+        "Scion"
+      ]
+    },
     "Name": "Barrage Support",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Barrage_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/4/4c/Barrage_Support_inventory_icon.png/revision/latest?cb=20191213185054",
+    "Level": 38
+  },
+  {
+    "Id": "SupportBehead",
+    "Support": true,
+    "Location": null,
+    "Name": "Behead Support",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Behead_Support",
+    "ImageUrl": null,
     "Level": 38
   },
   {
@@ -4928,7 +5107,19 @@
   {
     "Id": "SupportBloodlust",
     "Support": true,
-    "Location": null,
+    "Location": {
+      "Quest": "Sharp and Cruel",
+      "Act": "Act 2",
+      "Npc": "Yeena",
+      "Classes": [
+        "Shadow",
+        "Ranger",
+        "Duelist",
+        "Marauder",
+        "Templar",
+        "Scion"
+      ]
+    },
     "Name": "Bloodlust Support",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Bloodlust_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/3/3f/Bloodlust_Support_inventory_icon.png/revision/latest?cb=20150707194010",
@@ -4994,7 +5185,16 @@
   {
     "Id": "SupportBrutality",
     "Support": true,
-    "Location": null,
+    "Location": {
+      "Quest": "The Eternal Nightmare",
+      "Act": "Act 4",
+      "Npc": "Petarus and Vanja",
+      "Classes": [
+        "Duelist",
+        "Marauder",
+        "Scion"
+      ]
+    },
     "Name": "Brutality Support",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Brutality_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/c/c9/Brutality_Support_inventory_icon.png/revision/latest?cb=20170804100332",
@@ -5038,7 +5238,20 @@
   {
     "Id": "SupportCastOnCrit",
     "Support": true,
-    "Location": null,
+    "Location": {
+      "Quest": "The Eternal Nightmare",
+      "Act": "Act 4",
+      "Npc": "Petarus and Vanja",
+      "Classes": [
+        "Witch",
+        "Shadow",
+        "Ranger",
+        "Duelist",
+        "Marauder",
+        "Templar",
+        "Scion"
+      ]
+    },
     "Name": "Cast On Critical Strike Support",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Cast_On_Critical_Strike_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/2/29/Cast_On_Critical_Strike_Support_inventory_icon.png/revision/latest?cb=20190607180743",
@@ -5144,7 +5357,20 @@
   {
     "Id": "SupportCastWhileChannelling",
     "Support": true,
-    "Location": null,
+    "Location": {
+      "Quest": "The Eternal Nightmare",
+      "Act": "Act 4",
+      "Npc": "Petarus and Vanja",
+      "Classes": [
+        "Witch",
+        "Shadow",
+        "Ranger",
+        "Duelist",
+        "Marauder",
+        "Templar",
+        "Scion"
+      ]
+    },
     "Name": "Cast while Channelling Support",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Cast_while_Channelling_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/6/67/Cast_while_Channelling_Support_inventory_icon.png/revision/latest?cb=20161202183556",
@@ -5162,7 +5388,20 @@
   {
     "Id": "SupportChain",
     "Support": true,
-    "Location": null,
+    "Location": {
+      "Quest": "The Eternal Nightmare",
+      "Act": "Act 4",
+      "Npc": "Petarus and Vanja",
+      "Classes": [
+        "Witch",
+        "Shadow",
+        "Ranger",
+        "Duelist",
+        "Marauder",
+        "Templar",
+        "Scion"
+      ]
+    },
     "Name": "Chain Support",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Chain_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/4/49/Chain_Support_inventory_icon.png/revision/latest?cb=20190607180753",
@@ -5216,11 +5455,37 @@
   {
     "Id": "SupportChanceToIgnite",
     "Support": true,
-    "Location": null,
+    "Location": {
+      "Quest": "The Caged Brute",
+      "Act": "Act 1",
+      "Npc": "Nessa",
+      "Classes": [
+        "Witch",
+        "Shadow",
+        "Marauder",
+        "Templar"
+      ]
+    },
     "Name": "Combustion Support",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Combustion_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/1/18/Combustion_Support_inventory_icon.png/revision/latest?cb=20190607180802",
     "Level": 8
+  },
+  {
+    "Id": "SupportChanceToPoison",
+    "Support": true,
+    "Location": {
+      "Quest": "Enemy at the Gate",
+      "Act": "Act 1",
+      "Npc": "Nessa",
+      "Classes": [
+        "Shadow"
+      ]
+    },
+    "Name": "Chance to Poison Support",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Chance_to_Poison_Support",
+    "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/9/91/Chance_to_Poison_Support_inventory_icon.png/revision/latest?cb=20170804100506",
+    "Level": 1
   },
   {
     "Id": "SupportChaosAttacks",
@@ -5374,6 +5639,24 @@
     "Level": 72
   },
   {
+    "Id": "SupportCriticalStrikeAffliction",
+    "Support": true,
+    "Location": {
+      "Quest": "A Fixture of Fate",
+      "Act": "Act 3",
+      "Npc": "Clarissa",
+      "Classes": [
+        "Shadow",
+        "Ranger",
+        "Scion"
+      ]
+    },
+    "Name": "Critical Strike Affliction Support",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Critical_Strike_Affliction_Support",
+    "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/1/14/Critical_Strike_Affliction_Support_inventory_icon.png/revision/latest?cb=20151211232220",
+    "Level": 31
+  },
+  {
     "Id": "SupportCruelty",
     "Support": true,
     "Location": null,
@@ -5385,7 +5668,20 @@
   {
     "Id": "SupportCullingStrike",
     "Support": true,
-    "Location": null,
+    "Location": {
+      "Quest": "Sharp and Cruel",
+      "Act": "Act 2",
+      "Npc": "Yeena",
+      "Classes": [
+        "Witch",
+        "Shadow",
+        "Ranger",
+        "Duelist",
+        "Marauder",
+        "Templar",
+        "Scion"
+      ]
+    },
     "Name": "Culling Strike Support",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Culling_Strike_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/c/cf/Culling_Strike_Support_inventory_icon.png/revision/latest?cb=20190607180806",
@@ -5446,7 +5742,19 @@
   {
     "Id": "SupportDeadlyAilments",
     "Support": true,
-    "Location": null,
+    "Location": {
+      "Quest": "Sharp and Cruel",
+      "Act": "Act 2",
+      "Npc": "Yeena",
+      "Classes": [
+        "Witch",
+        "Shadow",
+        "Ranger",
+        "Duelist",
+        "Templar",
+        "Scion"
+      ]
+    },
     "Name": "Deadly Ailments Support",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Deadly_Ailments_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/3/31/Deadly_Ailments_Support_inventory_icon.png/revision/latest?cb=20170804100413",
@@ -5496,6 +5804,15 @@
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Decay_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/c/c9/Decay_Support_inventory_icon.png/revision/latest?cb=20170804100426",
     "Level": 38
+  },
+  {
+    "Id": "SupportEarthbreaker",
+    "Support": true,
+    "Location": null,
+    "Name": "Earthbreaker Support",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Earthbreaker_Support",
+    "ImageUrl": null,
+    "Level": 8
   },
   {
     "Id": "SupportEfficacy",
@@ -5675,6 +5992,15 @@
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Awakened_Fire_Penetration_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/5/55/Awakened_Fire_Penetration_Support_inventory_icon.png/revision/latest?cb=20191213185020",
     "Level": 72
+  },
+  {
+    "Id": "SupportFocusedBallista",
+    "Support": true,
+    "Location": null,
+    "Name": "Focused Ballista Support",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Focused_Ballista_Support",
+    "ImageUrl": null,
+    "Level": 31
   },
   {
     "Id": "SupportFork",
@@ -6003,7 +6329,17 @@
   {
     "Id": "SupportIncreasedBurningDamage",
     "Support": true,
-    "Location": null,
+    "Location": {
+      "Quest": "A Fixture of Fate",
+      "Act": "Act 3",
+      "Npc": "Clarissa",
+      "Classes": [
+        "Witch",
+        "Marauder",
+        "Templar",
+        "Scion"
+      ]
+    },
     "Name": "Burning Damage Support",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Burning_Damage_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/9/96/Burning_Damage_Support_inventory_icon.png/revision/latest?cb=20170807154904",
@@ -6172,22 +6508,6 @@
     "Level": 8
   },
   {
-    "Id": "SupportLesserPoison",
-    "Support": true,
-    "Location": {
-      "Quest": "Enemy at the Gate",
-      "Act": "Act 1",
-      "Npc": "Nessa",
-      "Classes": [
-        "Shadow"
-      ]
-    },
-    "Name": "Lesser Poison Support",
-    "WikiUrl": "https://pathofexile.fandom.com/wiki/Lesser_Poison_Support",
-    "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/9/91/Chance_to_Poison_Support_inventory_icon.png/revision/latest?cb=20170804100506",
-    "Level": 1
-  },
-  {
     "Id": "SupportLifeGainOnHit",
     "Support": true,
     "Location": {
@@ -6316,7 +6636,17 @@
   {
     "Id": "SupportMeleeDamageOnFullLife",
     "Support": true,
-    "Location": null,
+    "Location": {
+      "Quest": "Sharp and Cruel",
+      "Act": "Act 2",
+      "Npc": "Yeena",
+      "Classes": [
+        "Duelist",
+        "Marauder",
+        "Templar",
+        "Scion"
+      ]
+    },
     "Name": "Damage on Full Life Support",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Damage_on_Full_Life_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/2/20/Damage_on_Full_Life_Support_inventory_icon.png/revision/latest?cb=20190607180808",
@@ -6745,24 +7075,6 @@
     "Level": 18
   },
   {
-    "Id": "SupportPoison",
-    "Support": true,
-    "Location": {
-      "Quest": "A Fixture of Fate",
-      "Act": "Act 3",
-      "Npc": "Clarissa",
-      "Classes": [
-        "Shadow",
-        "Ranger",
-        "Scion"
-      ]
-    },
-    "Name": "Poison Support",
-    "WikiUrl": "https://pathofexile.fandom.com/wiki/Poison_Support",
-    "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/1/14/Critical_Strike_Affliction_Support_inventory_icon.png/revision/latest?cb=20151211232220",
-    "Level": 31
-  },
-  {
     "Id": "SupportPowerChargeOnCrit",
     "Support": true,
     "Location": {
@@ -7011,7 +7323,19 @@
   {
     "Id": "SupportSlashingWeapon",
     "Support": true,
-    "Location": null,
+    "Location": {
+      "Quest": "Sharp and Cruel",
+      "Act": "Act 2",
+      "Npc": "Yeena",
+      "Classes": [
+        "Shadow",
+        "Ranger",
+        "Duelist",
+        "Marauder",
+        "Templar",
+        "Scion"
+      ]
+    },
     "Name": "Close Combat Support",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Close_Combat_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/5/5a/Close_Combat_Support_inventory_icon.png/revision/latest?cb=20190607180756",
@@ -7162,7 +7486,16 @@
   {
     "Id": "SupportSummonElementalResistances",
     "Support": true,
-    "Location": null,
+    "Location": {
+      "Quest": "A Fixture of Fate",
+      "Act": "Act 3",
+      "Npc": "Clarissa",
+      "Classes": [
+        "Witch",
+        "Templar",
+        "Scion"
+      ]
+    },
     "Name": "Elemental Army Support",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Elemental_Army_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/d/d9/Elemental_Army_Support_inventory_icon.png/revision/latest?cb=20190906205633",
@@ -7239,7 +7572,17 @@
   {
     "Id": "SupportTrapCooldown",
     "Support": true,
-    "Location": null,
+    "Location": {
+      "Quest": "A Fixture of Fate",
+      "Act": "Act 3",
+      "Npc": "Clarissa",
+      "Classes": [
+        "Witch",
+        "Shadow",
+        "Ranger",
+        "Scion"
+      ]
+    },
     "Name": "Advanced Traps Support",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Advanced_Traps_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/5/5d/Advanced_Traps_Support_inventory_icon.png/revision/latest?cb=20160310160150",
@@ -7352,7 +7695,19 @@
   {
     "Id": "SupportWeaponElementalDamage",
     "Support": true,
-    "Location": null,
+    "Location": {
+      "Quest": "Sharp and Cruel",
+      "Act": "Act 2",
+      "Npc": "Yeena",
+      "Classes": [
+        "Shadow",
+        "Ranger",
+        "Duelist",
+        "Marauder",
+        "Templar",
+        "Scion"
+      ]
+    },
     "Name": "Elemental Damage with Attacks Support",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Elemental_Damage_with_Attacks_Support",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/1/14/Elemental_Damage_with_Attacks_Support_inventory_icon.png/revision/latest?cb=20190607180814",
@@ -7444,7 +7799,7 @@
     "Name": "Spectral Shield Throw",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Spectral_Shield_Throw",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/4/41/Spectral_Shield_Throw_inventory_icon.png/revision/latest?cb=20180302190040",
-    "Level": 12
+    "Level": 28
   },
   {
     "Id": "ThrownWeapon",
@@ -7492,7 +7847,17 @@
   {
     "Id": "TotemMelee",
     "Support": false,
-    "Location": null,
+    "Location": {
+      "Quest": "Breaking Some Eggs",
+      "Act": "Act 1",
+      "Npc": "Nessa",
+      "Classes": [
+        "Duelist",
+        "Marauder",
+        "Templar",
+        "Scion"
+      ]
+    },
     "Name": "Ancestral Protector",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Ancestral_Protector",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/f/f2/Ancestral_Protector_inventory_icon.png/revision/latest?cb=20160310155512",
@@ -8303,6 +8668,15 @@
     "Name": "Volatile Dead",
     "WikiUrl": "https://pathofexile.fandom.com/wiki/Volatile_Dead",
     "ImageUrl": "https://static.wikia.nocookie.net/pathofexile_gamepedia/images/1/1e/Volatile_Dead_inventory_icon.png/revision/latest?cb=20171208113533",
+    "Level": 12
+  },
+  {
+    "Id": "VoltaxicBurst",
+    "Support": false,
+    "Location": null,
+    "Name": "Voltaxic Burst",
+    "WikiUrl": "https://pathofexile.fandom.com/wiki/Voltaxic_Burst",
+    "ImageUrl": null,
     "Level": 12
   },
   {
