@@ -67,7 +67,14 @@ namespace Lurker.Helpers
                     var href = hyperlink.Attributes.Where(a => a.Name == "href").FirstOrDefault();
                     if (href != null)
                     {
-                        return new Uri(href.Value);
+                        try
+                        {
+                            return new Uri(href.Value);
+                        }
+                        catch
+                        {
+                            return null;
+                        }
                     }
                 }
             }
@@ -86,7 +93,7 @@ namespace Lurker.Helpers
                 }
             }
 
-            throw new InvalidOperationException();
+            return null;
         }
 
         #endregion
