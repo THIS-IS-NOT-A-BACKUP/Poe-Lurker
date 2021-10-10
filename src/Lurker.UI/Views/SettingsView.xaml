@@ -541,22 +541,41 @@
                             Cursor="Hand"
                             ToolTip="Open"
                             BorderThickness="0"
-                            Margin="0,20,0,0"
+                            Margin="-12,-46,0,0"
                             Height="30" 
                             Visibility="{Binding HasYoutube, Converter={StaticResource BooleanToVisibilityConverter}}"
                             Style="{DynamicResource MetroCircleButtonStyle}">
                                 <Button.Content>
                                     <local:IconPack HorizontalAlignment="Right"
                                             VerticalAlignment="Bottom"
-                                            Foreground="#af8404"
+                                            Foreground="{DynamicResource AccentColorBrush}"
                                             Grid.Row="2"
-                                            Height="20"
-                                            Width="20"
+                                            Height="15"
+                                            Width="15"
                                             Data="{x:Static local:IconPackData.Open}"/>
+                                </Button.Content>
+                            </Button>
+
+                            <Button x:Name="OpenPushBullet" VerticalAlignment="Center" Cursor="Hand" Margin="30,0,0,0" Background="#42a66e" BorderThickness="0">
+                                <Button.Content>
+                                    <StackPanel Orientation="Horizontal" Margin="8,4,8,4">
+                                        <local:IconPack HorizontalAlignment="Right"
+                                            VerticalAlignment="Center"
+                                            Foreground="White"
+                                            Grid.Row="2"
+                                            Height="18"
+                                            Width="18"
+                                            Data="{x:Static local:IconPackData.Pushbullet}"/>
+                                        <TextBlock Margin="4,0,0,0" VerticalAlignment="Center" FontSize="18">Pushbullet</TextBlock>
+                                    </StackPanel>
+                                    
                                 </Button.Content>
                             </Button>
                         </StackPanel>
                     </Grid>
+                    <Controls:Flyout IsOpen="{Binding IsPushBulletOpen}" BorderThickness="1,0,0,0" BorderBrush="Gray" Header="Pushbullet" FlowDirection="LeftToRight" Position="Right" Grid.RowSpan="3" Width="225">
+                        <ContentControl x:Name="PushBullet"/>
+                    </Controls:Flyout>
                 </Grid>
             </TabItem>
         </Controls:MetroAnimatedTabControl>
