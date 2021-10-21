@@ -32,6 +32,30 @@ namespace Lurker.Services
         #region Methods
 
         /// <summary>
+        /// Validate the build.
+        /// </summary>
+        /// <param name="value">the value.</param>
+        /// <returns>If the build is valid.</returns>
+        public static bool IsValid(string value)
+        {
+            var xml = GetXml(value);
+            if (string.IsNullOrEmpty(xml))
+            {
+                return false;
+            }
+
+            var document = XDocument.Parse(xml);
+
+            var buildElement = document.Root.Element("Build");
+            if (buildElement == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
         /// Initializes the asynchronous.
         /// </summary>
         /// <param name="service">The service.</param>
@@ -72,10 +96,30 @@ namespace Lurker.Services
 
             build.Xml = xml;
             var document = XDocument.Parse(build.Xml);
-
             var buildElement = document.Root.Element("Build");
             if (buildElement != null)
             {
+                double totalDps = 0;
+                double totalDotDps = 0;
+
+                var totalDpsElement = buildElement.Elements("PlayerStat").FirstOrDefault(e => e.Attribute("stat").Value == "TotalDPS");
+                if (totalDpsElement != null)
+                {
+                    totalDps = (double)totalDpsElement.Attribute("value");
+                }
+
+                var totalDotDpsElement = buildElement.Elements("PlayerStat").FirstOrDefault(e => e.Attribute("stat").Value == "TotalDotDPS");
+                if (totalDotDpsElement != null)
+                {
+                    totalDotDps = (double)totalDotDpsElement.Attribute("value");
+                }
+
+                build.Damage = new DamageValue()
+                {
+                    IsDot = totalDotDps > totalDps,
+                    Value = totalDotDps > totalDps ? totalDotDps : totalDps,
+                };
+
                 var classAttribute = buildElement.Attribute("className");
                 if (classAttribute != null)
                 {
