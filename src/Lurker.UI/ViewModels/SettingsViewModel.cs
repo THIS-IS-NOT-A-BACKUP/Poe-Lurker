@@ -163,6 +163,11 @@ namespace Lurker.UI.ViewModels
         /// <summary>
         /// Gets or sets the main hot key.
         /// </summary>
+        public HotkeyViewModel GuildHideoutHotkey { get; set; }
+
+        /// <summary>
+        /// Gets or sets the main hot key.
+        /// </summary>
         public HotkeyViewModel MonsterRemainingHotkey { get; set; }
 
         /// <summary>
@@ -1353,6 +1358,8 @@ namespace Lurker.UI.ViewModels
             this.MainHotkey = new HotkeyViewModel("Invite & Trade", this._hotkeyService.Main, this.GetNextKeyCode);
             this.OpenWikiHotkey = new HotkeyViewModel("Open Wiki", this._hotkeyService.OpenWiki, this.GetNextKeyCode);
 
+            this.GuildHideoutHotkey = new HotkeyViewModel("Guild Hideout", this._hotkeyService.JoinGuildHideout, this.GetNextKeyCode);
+
             this.MonsterRemainingHotkey = new HotkeyViewModel("Remaining Monster", this._hotkeyService.RemainingMonster, this.GetNextKeyCode);
             this.SearchItemHotkey = new HotkeyViewModel("Item Highlight", this._hotkeyService.SearchItem, this.GetNextKeyCode);
 
@@ -1374,6 +1381,7 @@ namespace Lurker.UI.ViewModels
             this.OpenWikiHotkey.PropertyChanged += this.Hotkey_PropertyChanged;
             this.MonsterRemainingHotkey.PropertyChanged += this.Hotkey_PropertyChanged;
             this.SearchItemHotkey.PropertyChanged += this.Hotkey_PropertyChanged;
+            this.GuildHideoutHotkey.PropertyChanged += this.Hotkey_PropertyChanged;
         }
 
         /// <summary>
