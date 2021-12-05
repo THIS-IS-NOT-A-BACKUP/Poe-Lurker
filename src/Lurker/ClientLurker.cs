@@ -33,6 +33,7 @@ namespace Lurker
         private string _lastLine;
         private CancellationTokenSource _tokenSource;
         private Process _pathOfExileProcess;
+        private string _currentLeague;
 
         #endregion
 
@@ -127,6 +128,11 @@ namespace Lurker
         /// Occurs when [player level up].
         /// </summary>
         public event EventHandler<PlayerLevelUpEvent> PlayerLevelUp;
+
+        /// <summary>
+        /// Occurs when [league changed].
+        /// </summary>
+        public event EventHandler<string> LeagueChanged;
 
         #endregion
 
@@ -336,6 +342,7 @@ namespace Lurker
                 var tradeEvent = TradeEvent.TryParse(newline);
                 if (tradeEvent != null)
                 {
+                    this.HandleLeague(tradeEvent);
                     this.IncomingOffer?.Invoke(this, tradeEvent);
                     return;
                 }
@@ -343,6 +350,7 @@ namespace Lurker
                 var outgoingTradeEvent = OutgoingTradeEvent.TryParse(newline);
                 if (outgoingTradeEvent != null)
                 {
+                    this.HandleLeague(outgoingTradeEvent);
                     this.OutgoingOffer?.Invoke(this, outgoingTradeEvent);
                     return;
                 }
@@ -440,6 +448,15 @@ namespace Lurker
             File.Delete(filePath);
 
             return initialeWriteTime != fileInformation.LastWriteTimeUtc;
+        }
+
+        private void HandleLeague(TradeEvent tradeEvent)
+        {
+            if (this._currentLeague != tradeEvent.LeagueName)
+            {
+                this._currentLeague = tradeEvent.LeagueName;
+                this.LeagueChanged?.Invoke(this, this._currentLeague);
+            }
         }
 
         #endregion
