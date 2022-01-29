@@ -111,8 +111,8 @@ namespace Lurker.UI.ViewModels
             this.BuildManager = new BuildManagerViewModel(this.ShowMessage, githubService);
 
             this.PushProviders = new ObservableCollection<PushProviderViewModel>();
-            var pushBulletViewModel = new PushProviderViewModel("PushBullet", pushBulletService);
-            var pushHoverViewModel = new PushProviderViewModel("PushHover", pushHoverService);
+            var pushBulletViewModel = new PushProviderViewModel("Pushbullet", pushBulletService);
+            var pushHoverViewModel = new PushProviderViewModel("Pushover", pushHoverService);
             this.PushProviders.Add(pushBulletViewModel);
             this.PushProviders.Add(pushHoverViewModel);
             this.SelectedPushProvider = pushHoverService.Enable ? pushHoverViewModel : pushBulletViewModel;
@@ -182,6 +182,11 @@ namespace Lurker.UI.ViewModels
         /// Gets or sets the main hot key.
         /// </summary>
         public HotkeyViewModel GuildHideoutHotkey { get; set; }
+
+        /// <summary>
+        /// Gets or sets the main hot key.
+        /// </summary>
+        public HotkeyViewModel HideoutHotkey { get; set; }
 
         /// <summary>
         /// Gets or sets the main hot key.
@@ -1526,6 +1531,7 @@ namespace Lurker.UI.ViewModels
             this.OpenWikiHotkey = new HotkeyViewModel("Open Wiki", this._hotkeyService.OpenWiki, this.GetNextKeyCode);
 
             this.GuildHideoutHotkey = new HotkeyViewModel("Guild Hideout", this._hotkeyService.JoinGuildHideout, this.GetNextKeyCode);
+            this.HideoutHotkey = new HotkeyViewModel("Hideout", this._hotkeyService.JoinHideout, this.GetNextKeyCode);
 
             this.MonsterRemainingHotkey = new HotkeyViewModel("Remaining Monster", this._hotkeyService.RemainingMonster, this.GetNextKeyCode);
             this.SearchItemHotkey = new HotkeyViewModel("Item Highlight", this._hotkeyService.SearchItem, this.GetNextKeyCode);
@@ -1549,6 +1555,7 @@ namespace Lurker.UI.ViewModels
             this.MonsterRemainingHotkey.PropertyChanged += this.Hotkey_PropertyChanged;
             this.SearchItemHotkey.PropertyChanged += this.Hotkey_PropertyChanged;
             this.GuildHideoutHotkey.PropertyChanged += this.Hotkey_PropertyChanged;
+            this.HideoutHotkey.PropertyChanged += this.Hotkey_PropertyChanged;
         }
 
         /// <summary>
