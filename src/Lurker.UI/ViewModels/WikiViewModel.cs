@@ -129,6 +129,8 @@ namespace Lurker.UI.ViewModels
         public void CloseWindow()
         {
             this.SearchValue = string.Empty;
+            this.CurrentView = null;
+            this.NotifyOfPropertyChange(() => this.CurrentView);
             this.Visible = false;
             this.DockingHelper.SetForeground();
         }
@@ -139,7 +141,10 @@ namespace Lurker.UI.ViewModels
         /// <returns>The task.</returns>
         public async Task Show()
         {
-            var clipboardItem = await ClipboardHelper.GetItemInClipboard();
+            var clipboardTask = ClipboardHelper.GetItemInClipboard();
+            this.Visible = true;
+            this.SetInForeground();
+            var clipboardItem = await clipboardTask;
             ClipboardHelper.ClearClipboard();
             if (clipboardItem != null && clipboardItem.Rarity == Patreon.Models.Rarity.Unique)
             {
@@ -154,9 +159,6 @@ namespace Lurker.UI.ViewModels
             {
                 await this.SetExaltedRatio();
             }
-
-            this.Visible = true;
-            this.SetInForeground();
         }
 
         /// <summary>
