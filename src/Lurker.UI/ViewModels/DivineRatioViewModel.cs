@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="ExaltedRatioViewModel.cs" company="Wohs Inc.">
+// <copyright file="DivineRatioViewModel.cs" company="Wohs Inc.">
 //     Copyright © Wohs Inc.
 // </copyright>
 //-----------------------------------------------------------------------
@@ -12,9 +12,9 @@ namespace Lurker.UI.ViewModels
     using Lurker.Patreon.Models.Ninja;
 
     /// <summary>
-    /// Represents the Exalted Ratio.
+    /// Represents the Divine Ratio.
     /// </summary>
-    public class ExaltedRatioViewModel : PropertyChangedBase
+    public class DivineRatioViewModel : PropertyChangedBase
     {
         #region Fields
 
@@ -25,10 +25,10 @@ namespace Lurker.UI.ViewModels
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ExaltedRatioViewModel"/> class.
+        /// Initializes a new instance of the <see cref="DivineRatioViewModel"/> class.
         /// </summary>
         /// <param name="line">The line.</param>
-        public ExaltedRatioViewModel(CurrencyLine line)
+        public DivineRatioViewModel(CurrencyLine line)
         {
             this._line = line;
             this.Ratio = line.ChaosEquivalent;

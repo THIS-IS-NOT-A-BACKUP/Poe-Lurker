@@ -34,7 +34,7 @@ namespace Lurker.UI.ViewModels
         private KeyboardLurker _keyboardLurker;
         private PoeNinjaService _ninjaService;
         private bool _visible;
-        private ExaltedRatioViewModel _exaltedRatioViewModel;
+        private DivineRatioViewModel _divineRatioViewModel;
         private IEnumerable<UniqueItem> _uniques;
 
         #endregion
@@ -244,7 +244,7 @@ namespace Lurker.UI.ViewModels
 
         private void Search(string value)
         {
-            this.CurrentView = this._exaltedRatioViewModel;
+            this.CurrentView = this._divineRatioViewModel;
             this.NotifyOfPropertyChange(() => this.CurrentView);
             this.Items.Clear();
             if (string.IsNullOrEmpty(value))
@@ -289,11 +289,11 @@ namespace Lurker.UI.ViewModels
                 return;
             }
 
-            var line = await this._ninjaService.GetExaltRationAsync(this.SettingsService.RecentLeagueName);
+            var line = await this._ninjaService.GetDivineRationAsync(this.SettingsService.RecentLeagueName);
             if (line != null && line.ChaosEquivalent != 0)
             {
-                this._exaltedRatioViewModel = new ExaltedRatioViewModel(line);
-                this.CurrentView = this._exaltedRatioViewModel;
+                this._divineRatioViewModel = new DivineRatioViewModel(line);
+                this.CurrentView = this._divineRatioViewModel;
                 this.NotifyOfPropertyChange(() => this.CurrentView);
             }
         }
