@@ -114,9 +114,29 @@ namespace Lurker.UI.ViewModels
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>The scaled value.</returns>
+        protected double ApplyAbsoluteScalingX(double value)
+        {
+            return Scale(value, this._scaleX, true);
+        }
+
+        /// <summary>
+        /// Applies the scaling x.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>The scaled value.</returns>
         protected double ApplyScalingX(double value)
         {
-            return value / this._scaleX;
+            return Scale(value, this._scaleX);
+        }
+
+        /// <summary>
+        /// Applies the scalling y.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>The scaled value.</returns>
+        protected double ApplyAbsoluteScalingY(double value)
+        {
+            return Scale(value, this._scaleY, true);
         }
 
         /// <summary>
@@ -126,7 +146,7 @@ namespace Lurker.UI.ViewModels
         /// <returns>The scaled value.</returns>
         protected double ApplyScalingY(double value)
         {
-            return value / this._scaleY;
+            return Scale(value, this._scaleY);
         }
 
         /// <summary>
@@ -173,6 +193,31 @@ namespace Lurker.UI.ViewModels
             await Task.Delay(time);
             this._manualHide = false;
             this.ShowView();
+        }
+
+        /// <summary>
+        /// Scale the value.
+        /// </summary>
+        /// <param name="value">The value to scale.</param>
+        /// <param name="scale">The scale factor.</param>
+        /// <returns>The scaled value.</returns>
+        private static double Scale(double value, double scale)
+        {
+            return Scale(value, scale, false);
+        }
+
+        /// <summary>
+        /// Scale the value.
+        /// </summary>
+        /// <param name="value">The value to scale.</param>
+        /// <param name="scale">The scale factor.</param>
+        /// <param name="absolute">If the value need to be positive.</param>
+        /// <returns>The scaled value.</returns>
+        private static double Scale(double value, double scale, bool absolute)
+        {
+            var current = absolute ? Math.Abs(value) : value;
+
+            return current / scale;
         }
 
         /// <summary>

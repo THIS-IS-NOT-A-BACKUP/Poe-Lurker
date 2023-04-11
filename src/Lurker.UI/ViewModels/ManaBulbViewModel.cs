@@ -44,7 +44,6 @@ namespace Lurker.UI.ViewModels
             this._eventAggregator.Subscribe(this);
 
             this.ClientLurker.LocationChanged += this.Lurker_LocationChanged;
-            this.ClientLurker.RemainingMonsters += this.Lurker_RemainingMonsters;
             this.SettingsService.OnSave += this.SettingsService_OnSave;
         }
 
@@ -107,8 +106,8 @@ namespace Lurker.UI.ViewModels
             var value = DefaultBulbHeight * windowInformation.Height / 1080;
             Execute.OnUIThread(() =>
             {
-                this.View.Height = this.ApplyScalingY(value);
-                this.View.Width = this.ApplyScalingX(value);
+                this.View.Height = this.ApplyAbsoluteScalingY(value);
+                this.View.Width = this.ApplyAbsoluteScalingX(value);
                 this.View.Left = this.ApplyScalingX(windowInformation.Position.Right - value);
                 this.View.Top = this.ApplyScalingY(windowInformation.Position.Bottom - value);
             });
@@ -123,7 +122,6 @@ namespace Lurker.UI.ViewModels
             if (close)
             {
                 this.ClientLurker.LocationChanged -= this.Lurker_LocationChanged;
-                this.ClientLurker.RemainingMonsters -= this.Lurker_RemainingMonsters;
                 this.SettingsService.OnSave -= this.SettingsService_OnSave;
                 this._eventAggregator.Unsubscribe(this);
             }
