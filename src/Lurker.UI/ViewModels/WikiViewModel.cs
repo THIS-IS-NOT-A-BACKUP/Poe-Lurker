@@ -267,17 +267,27 @@ namespace Lurker.UI.ViewModels
                         break;
                 }
             }
+
+            if (items.Count() == 1)
+            {
+                var firstItem = this.Items.FirstOrDefault();
+                var unique = firstItem as UniqueItemViewModel;
+                if (unique != null)
+                {
+                    this.OnItemClick(unique.Item);
+                }
+            }
         }
 
         private async void OnItemClick(UniqueItem item)
         {
-            var i = await this._ninjaService.GetItemAsync(item.Name, this.SettingsService.RecentLeagueName);
-            if (i == null)
+            var itemLine = await this._ninjaService.GetItemAsync(item.Name, this.SettingsService.RecentLeagueName);
+            if (itemLine == null)
             {
                 return;
             }
 
-            this.CurrentView = new ItemChartViewModel(i, item);
+            this.CurrentView = new ItemChartViewModel(itemLine, item);
             this.NotifyOfPropertyChange(() => this.CurrentView);
         }
 
