@@ -362,13 +362,6 @@ namespace Lurker
                     return;
                 }
 
-                var whisperEvent = WhisperEvent.TryParse(newline);
-                if (whisperEvent != null)
-                {
-                    this.Whispered?.Invoke(this, whisperEvent);
-                    return;
-                }
-
                 var locationEvent = LocationChangedEvent.TryParse(newline);
                 if (locationEvent != null)
                 {
